@@ -24,13 +24,16 @@ ___
     Navigate to Project1\terrform\test\
     Edit the file vars.tf and enter the desired default Azure location. Save.
 
-    Run: terraform apply to create the resource group used for packer and terraform resources.
+    Run terraform apply to create the resource group used for packer and terraform resources.
+
+    > terraform apply
+
     Answer yes when prompted.
 
     **Important**
-    Copy the Azure resource group ID after completion. It will look something like the below example. Substitute your subscription ID for *:
+    Copy the Azure resource group ID after completion. It will look something like the below parameter. Substitute your subscription ID for where you see dashes (-) below:
 
-    > terraform import azurerm_resource_group.main /subscriptions/********-****-****-****-************/resourceGroups/udacity-resources]
+    > terraform import azurerm_resource_group.main /subscriptions/- - - -/resourceGroups/udacity-resources]
 
     When prompted enter any number for number of VMs. This has no affect on the actual numebers of VMs created.
 
@@ -54,9 +57,9 @@ ___
 
 5. Import resource group into terraform
 
-    Navigate to Project1\terraform\production
+    Navigate to Project1\terraform\production and then import the resource group you created earlier (in step 1). Copy the resource group ID where you see dashes (-).
     
-    > terraform import azurerm_resource_group.main /subscriptions/71567b49-501a-405e-9390-f0615bead59f/resourceGroups/udacity-resources
+    > terraform import azurerm_resource_group.main /subscriptions/- - - -/resourceGroups/udacity-resources
     
     Edit Terraform JSON configuration file to use packer image
 
