@@ -31,9 +31,9 @@ Minimum requirements for this project
 
     > terraform import azurerm_resource_group.main /subscriptions/********-****-****-****-************/resourceGroups/udacity-resources]
 
-    When prompted enter any number for number of VMs. This no affect on the actual numebers of VMs created.
+    When prompted enter any number for number of VMs. This has no affect on the actual numebers of VMs created.
 
-3. Edit Packer Variables to store Azure Secrets
+3. Edit Packer variables to store Azure secrets unique to your Azure subscription 
     Open azure secrets file in Project1\packer\az_secrets.json
 
     Packer authenticates with Azure using a service principal. After creating Azure service principle update the az_secrets.json file with your service principles credentials: 
@@ -44,13 +44,15 @@ Minimum requirements for this project
 4. Deploy Packer Image 
 
     Naviage to Project1\packer
-    From the Azure command line Execute the command:
+    
+    from the Azure command line Execute the command:
 
     > packer build -var-file="az_secrets.json" demo.json
 
     This will take a long time.
 
 5. Import resource group into terraform
+
     Navigate to Project1\terraform\production
     
     > terraform import azurerm_resource_group.main /subscriptions/71567b49-501a-405e-9390-f0615bead59f/resourceGroups/udacity-resources
