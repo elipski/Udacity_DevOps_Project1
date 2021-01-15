@@ -40,9 +40,9 @@ ___
     Open azure secrets file in Project1\packer\az_secrets.json
 
     Packer authenticates with Azure using a service principal. After creating Azure service principle update the az_secrets.json file with your service principles credentials: 
-    client_id, 
-    client_secret,
-    subscription_id
+    * client_id 
+    * client_secret
+    * subscription_id
 
 4. Deploy Packer Image 
 
@@ -54,9 +54,9 @@ ___
 
     This will take a long time.
 
-5. Import resource group into terraform
+5. Import resource group into terraform 
 
-    Navigate to Project1\terraform\production and then import the resource group you created earlier (in step 1). Copy the resource group ID where you see dashes (-).
+    Navigate to Project1\terraform\production and then import the resource group ID you created earlier (in step 1). Use the resource group ID copied earlier.
     
     > terraform import azurerm_resource_group.main /subscriptions/- - - -/resourceGroups/udacity-resources
     
