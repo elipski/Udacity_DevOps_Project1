@@ -1,7 +1,7 @@
 ## DevOps Azure Infra structure Operations ##
 ### Infrastructure as Code Project 1 ###
 
-Deploy a Website with a load balancer 
+Deploy a Website with a load balancer using terraform, and packer templates, and the Azure CLI  
 
 #### Requirements ####
 Minimum requirements for this project
@@ -13,9 +13,12 @@ Minimum requirements for this project
 
 #### Deployment Instructions ####
 
-From Azure command interface git clone https://github.com/elipski/Udacity_DevOps_Project1
+1. Clone repository 
 
-1. Create Resource group (i.e. udacity-resources)
+    From Azure command interface 
+    > git clone https://github.com/elipski/Udacity_DevOps_Project1
+
+2. Create Resource group (i.e. udacity-resources)
 
     Navigate to Project1\terrform\test\
     Edit the file vars.tf and enter the desired default Azure location. Save.
@@ -30,7 +33,7 @@ From Azure command interface git clone https://github.com/elipski/Udacity_DevOps
 
     When prompted enter any number for number of VMs. This no affect on the actual numebers of VMs created.
 
-2. Edit Packer Variables to store Azure Secrets
+3. Edit Packer Variables to store Azure Secrets
     Open azure secrets file in Project1\packer\az_secrets.json
 
     Packer authenticates with Azure using a service principal. After creating Azure service principle update the az_secrets.json file with your service principles credentials: 
@@ -38,7 +41,7 @@ From Azure command interface git clone https://github.com/elipski/Udacity_DevOps
     client_secret,
     subscription_id
 
-3. Deploy Packer Image 
+4. Deploy Packer Image 
 
     Naviage to Project1\packer
     From the Azure command line Execute the command:
@@ -47,7 +50,7 @@ From Azure command interface git clone https://github.com/elipski/Udacity_DevOps
 
     This will take a long time.
 
-4. Import resource group into terraform
+5. Import resource group into terraform
     Navigate to Project1\terraform\production
     
     > terraform import azurerm_resource_group.main /subscriptions/71567b49-501a-405e-9390-f0615bead59f/resourceGroups/udacity-resources
@@ -57,7 +60,7 @@ From Azure command interface git clone https://github.com/elipski/Udacity_DevOps
     Navigate to Project1\terraform\production
     Edit the file vars.tf and enter the desired default Azure location. The location should be the same location as specified in Step 1 when creating the azure resource group, and the packer image (step 2). Save. 
     
-5. Validate the Terrorform deployment
+6. Validate the Terrorform deployment
 
     from Project\terraform\production run:
 
@@ -66,10 +69,10 @@ From Azure command interface git clone https://github.com/elipski/Udacity_DevOps
     Enter the desired number of Linux VMs to create when prompted. 
     Varify there are no errors when complete.
 
-6. Apply Terraform deployment  
+7. Apply Terraform deployment  
 
     from Project\terraform\production run:
-    
+
     >terraform apply solution.plan
     
     Varify there are no errors when complete.
