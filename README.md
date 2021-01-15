@@ -10,6 +10,7 @@ Minimum requirements for this project
 * Install Terraform   : https://www.terraform.io/downloads.html
 * Install Packer      : https://www.packer.io/downloads
 
+___
 
 #### Deployment Instructions ####
 
