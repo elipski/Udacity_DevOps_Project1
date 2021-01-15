@@ -61,12 +61,10 @@ ___
     
     > terraform import azurerm_resource_group.main /subscriptions/- - - -/resourceGroups/udacity-resources
     
-    Edit Terraform JSON configuration file to use packer image
-
-    Navigate to Project1\terraform\production
+6. Navigate to Project1\terraform\production
     Edit the file vars.tf and enter the desired default Azure location. The location should be the same location as specified in Step 1 when creating the azure resource group, and the packer image (step 2). Save. 
     
-6. Validate the Terrorform deployment
+7. Validate the Terrorform deployment
 
     from Project\terraform\production run:
 
@@ -75,7 +73,7 @@ ___
     Enter the desired number of Linux VMs to create when prompted. 
     Varify there are no errors when complete.
 
-7. Apply Terraform deployment  
+8. Apply Terraform deployment  
 
     from Project\terraform\production run:
 
