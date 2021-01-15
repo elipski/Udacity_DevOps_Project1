@@ -6,7 +6,7 @@ Deploy a Website with a load balancer
 #### Requirements ####
 Minimum requirements for this project
 
-Azure CLI (bash)
+Azure CLI (bash) 
 Install Terraform   : https://www.terraform.io/downloads.html
 Install Packer      : https://www.packer.io/downloads
 
@@ -50,10 +50,9 @@ From Azure command interface git clone https://github.com/elipski/Udacity_DevOps
 
 4. Import resource group into terraform
     Navigate to Project1\terraform\production
-
-
-terraform import azurerm_resource_group.main /subscriptions/71567b49-501a-405e-9390-f0615bead59f/resourceGroups/udacity-resources
-Edit Terraform JSON configuration file to use packer image
+    
+    terraform import azurerm_resource_group.main /subscriptions/71567b49-501a-405e-9390-f0615bead59f/resourceGroups/udacity-resources
+    Edit Terraform JSON configuration file to use packer image
 
     Navigate to Project1\terraform\production
     Edit the file vars.tf and enter the desired default Azure location. The location should be the same location as specified in Step 1 when creating the azure resource group, and the packer image (step 2). Save. 
