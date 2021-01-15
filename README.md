@@ -31,11 +31,10 @@ ___
     Answer yes when prompted.
 
     **Important**
-    Copy the Azure resource group ID after completion. It will look something like the below parameter. Substitute your subscription ID for where you see dashes (-) below:
+    Copy the Azure resource group ID after completion and save it for later use. It will look something like the below parameter. Substitute your subscription ID for where you see dashes (-) below:
 
-    > terraform import azurerm_resource_group.main /subscriptions/- - - -/resourceGroups/udacity-resources]
+    >[id=/subscriptions/- - - -/resourceGroups/udacity-resources]
 
-    When prompted enter any number for number of VMs. This has no affect on the actual numebers of VMs created.
 
 3. Edit Packer variables to store Azure secrets unique to your Azure subscription 
     Open azure secrets file in Project1\packer\az_secrets.json
@@ -47,9 +46,9 @@ ___
 
 4. Deploy Packer Image 
 
-    Naviage to Project1\packer
+    Naviage to Project1\packer.
     
-    from the Azure command line Execute the command:
+    From the Azure command line Execute the command:
 
     > packer build -var-file="az_secrets.json" demo.json
 
