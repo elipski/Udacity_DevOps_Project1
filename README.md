@@ -40,9 +40,9 @@ ___
     Open azure secrets file in Project1\packer\az_secrets.json
 
     Packer authenticates with Azure using a service principal. After creating Azure service principle update the az_secrets.json file with your service principles credentials: 
-    * client_id 
-    * client_secret
-    * subscription_id
+    - client_id 
+    - client_secret
+    - subscription_id
 
 4. Deploy Packer Image 
 
