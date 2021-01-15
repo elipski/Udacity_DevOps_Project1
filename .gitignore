@@ -14,6 +14,7 @@
 *.terraform
 *.terraform*
 *azure_service_principle*
+*.plan
 
 
 # User-specific files (MonoDevelop/Xamarin Studio)
