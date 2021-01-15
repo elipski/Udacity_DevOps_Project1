@@ -23,12 +23,10 @@ From Azure command interface git clone https://github.com/elipski/Udacity_DevOps
     Run: terraform apply to create the resource group used for packer and terraform resources.
     Answer yes when prompted.
 
-    *Important*
+    **Important**
     Copy the Azure resource group ID after completion. It will look something like the below example. Substitute your subscription ID for *:
 
-    <code>
-    terraform import azurerm_resource_group.main /subscriptions/********-****-****-****-************/resourceGroups/udacity-resources]
-    </code>
+    > terraform import azurerm_resource_group.main /subscriptions/********-****-****-****-************/resourceGroups/udacity-resources]
 
     When prompted enter any number for number of VMs. This no affect on the actual numebers of VMs created.
 
@@ -44,14 +42,16 @@ From Azure command interface git clone https://github.com/elipski/Udacity_DevOps
 
     Naviage to Project1\packer
     From the Azure command line Execute the command:
-    packer build -var-file="az_secrets.json" demo.json
+
+    > packer build -var-file="az_secrets.json" demo.json
 
     This will take a long time.
 
 4. Import resource group into terraform
     Navigate to Project1\terraform\production
     
-    terraform import azurerm_resource_group.main /subscriptions/71567b49-501a-405e-9390-f0615bead59f/resourceGroups/udacity-resources
+    > terraform import azurerm_resource_group.main /subscriptions/71567b49-501a-405e-9390-f0615bead59f/resourceGroups/udacity-resources
+    
     Edit Terraform JSON configuration file to use packer image
 
     Navigate to Project1\terraform\production
@@ -60,7 +60,8 @@ From Azure command interface git clone https://github.com/elipski/Udacity_DevOps
 5. Validate the Terrorform deployment
 
     from Project\terraform\production run:
-    terraform plan -out solution.plan
+
+    > terraform plan -out solution.plan
 
     Enter the desired number of Linux VMs to create when prompted. 
     Varify there are no errors when complete.
@@ -68,8 +69,7 @@ From Azure command interface git clone https://github.com/elipski/Udacity_DevOps
 6. Apply Terraform deployment  
 
     from Project\terraform\production run:
-    <code>
-    terraform apply solution.plan
-    </code>
+    
+    >terraform apply solution.plan
     
     Varify there are no errors when complete.
