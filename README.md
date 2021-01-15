@@ -6,9 +6,9 @@ Deploy a Website with a load balancer
 #### Requirements ####
 Minimum requirements for this project
 
-Azure CLI (bash) 
-Install Terraform   : https://www.terraform.io/downloads.html
-Install Packer      : https://www.packer.io/downloads
+* Azure CLI (bash) 
+* Install Terraform   : https://www.terraform.io/downloads.html
+* Install Packer      : https://www.packer.io/downloads
 
 
 #### Deployment Instructions ####
