@@ -10,6 +10,7 @@ variable "location" {
 
 variable "vmcount" {
   description = "Enter the number of VMs you wish to create:"
+  default = 2
 }
 
 

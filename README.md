@@ -60,7 +60,7 @@ ___
 
 4. Deploy Packer Image 
 
-    Naviage to Project1
+    Naviage to \Project1
     
     From the Azure command line Execute the command:
 
@@ -72,25 +72,22 @@ ___
 
 5. Import resource group into terraform 
 
-    Navigate to Project1\terraform\production and then import the resource group ID you created earlier (in step 1). Use the resource group ID copied earlier.
+    Navigate to \Project1 and then import the resource group ID you created earlier (in step 1). Use the resource group ID copied earlier.
     
-    > terraform import azurerm_resource_group.main /subscriptions/- - - -/resourceGroups/udacity-resources 
-
-    It will aski for the number of VMs to create. Enter any number as this will not affect the actual number of VMs created. 
+    ![Terraform Import](./terraformImport.JPG)
     
 7. Validate the Terrorform deployment
 
-    from Project\terraform\production run:
+    from \Project1 run:
 
-    > terraform plan -out solution.plan
+    ![terrform plan](./terraformPlan.JPG)
 
-    Enter the desired number of Linux VMs to create when prompted. 
     Varify there are no errors when complete.
 
 8. Apply Terraform deployment  
 
     from Project\terraform\production run:
 
-    >terraform apply solution.plan
+    ![Terraform Apply](./terraformApplySolution.JPG)
     
     Varify there are no errors when complete.
