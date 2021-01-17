@@ -1,0 +1,76 @@
+ed@Azure:~$ az policy assignment list
+[
+  {
+    "description": null,
+    "displayName": null,
+    "enforcementMode": "Default",
+    "id": "/subscriptions/71567b49-501a-405e-9390-f0615bead59f/providers/Microsoft.Authorization/policyAssignments/MV5QyULlRAmlZdVZ7v3xGA",
+    "identity": null,
+    "location": null,
+    "metadata": {
+      "createdBy": "e8f1608c-1f7e-44cb-851c-0a483c74d7d1",
+      "createdOn": "2020-12-07T22:11:15.3859499Z",
+      "updatedBy": null,
+      "updatedOn": null
+    },
+    "name": "MV5QyULlRAmlZdVZ7v3xGA",
+    "notScopes": null,
+    "parameters": null,
+    "policyDefinitionId": "/subscriptions/71567b49-501a-405e-9390-f0615bead59f/providers/Microsoft.Authorization/policyDefinitions/LinuxPasswordPolicy",
+    "scope": "/subscriptions/71567b49-501a-405e-9390-f0615bead59f",
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments"
+  },
+  {
+    "description": "This is the default set of policies monitored by Azure Security Center. It was automatically assigned as part of onboarding to Security Center. The default assignment contains only audit policies. For more information please visit https://aka.ms/ascpolicies",
+    "displayName": "ASC Default (subscription: 71567b49-501a-405e-9390-f0615bead59f)",
+    "enforcementMode": "Default",
+    "id": "/subscriptions/71567b49-501a-405e-9390-f0615bead59f/providers/Microsoft.Authorization/policyAssignments/SecurityCenterBuiltIn",
+    "identity": null,
+    "location": null,
+    "metadata": {
+      "assignedBy": "Security Center",
+      "createdBy": "978b2d00-da27-4bf5-9da7-48dedda09c38",
+      "createdOn": "2019-09-15T03:06:02.7325629Z",
+      "updatedBy": null,
+      "updatedOn": null
+    },
+    "name": "SecurityCenterBuiltIn",
+    "notScopes": null,
+    "parameters": {},
+    "policyDefinitionId": "/providers/Microsoft.Authorization/policySetDefinitions/1f3afdf9-d0c9-4c3d-847f-89da613e70a8",
+    "scope": "/subscriptions/71567b49-501a-405e-9390-f0615bead59f",
+    "sku": {
+      "name": "A1",
+      "tier": "Standard"
+    },
+    "type": "Microsoft.Authorization/policyAssignments"
+  },
+  {
+    "description": null,
+    "displayName": null,
+    "enforcementMode": "Default",
+    "id": "/Subscriptions/71567b49-501a-405e-9390-f0615bead59f/providers/Microsoft.Authorization/policyAssignments/tagging-policy",
+    "identity": null,
+    "location": null,
+    "metadata": {
+      "createdBy": "e8f1608c-1f7e-44cb-851c-0a483c74d7d1",
+      "createdOn": "2021-01-01T22:11:08.7327778Z",
+      "updatedBy": null,
+      "updatedOn": null
+    },
+    "name": "tagging-policy",
+    "notScopes": null,
+    "parameters": null,
+    "policyDefinitionId": "/subscriptions/71567b49-501a-405e-9390-f0615bead59f/providers/Microsoft.Authorization/policyDefinitions/tagging-policy",
+    "scope": "/Subscriptions/71567b49-501a-405e-9390-f0615bead59f",
+    "sku": {
+      "name": "A0",
+      "tier": "Free"
+    },
+    "type": "Microsoft.Authorization/policyAssignments"
+  }
+]

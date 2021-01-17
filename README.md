@@ -19,14 +19,21 @@ ___
     From Azure command interface 
     > git clone https://github.com/elipski/Udacity_DevOps_Project1
 
+2.  Navigate to Project1\vars.tf
+
+    Implementation specific variables are stored in the vars.tf file. In this file you can set up a default value such as number of VMs to create and the Azure location to create packer and terraform resources. 
+
+    Navigate to Project1\terraform and open vars.tf using your text editor of choice (vi for example). Look for the variable "location" and default setting for location. Currently it is set to eastus2. The location should be the Azure location closed to where the created VMs will be utilized. Edit the file vars.tf and enter the desired default Azure location. The location should be the same location as specified in Step 1 when creating the azure resource group, and the packer image (step 2). Save. 
+
+    Terraform Variables: https://www.terraform.io/docs/configuration/variables.html
+    
 2. Create Resource group (i.e. udacity-resources)
 
-    Navigate to Project1\terrform\test\
-    Edit the file vars.tf and enter the desired default Azure location. Save.
+    Navigate to Project1\terrform\create_rg\ nd open vars.tf using your text editor of choice (vi for example). Look for the variable "location" and default setting for location. Currently it is set to eastus2. The location should be the Azure location closed to where the created VMs will be utilized. Edit the file vars.tf and enter the desired default Azure location. The location should be the same location as specified in Step 1 when creating the azure resource group, and the packer image (step 2). Save. 
 
     Run terraform apply to create the resource group used for packer and terraform resources.
 
-    > terraform apply
+    ![apply] (terrformApply.jpg)
 
     Answer yes when prompted.
 
@@ -50,7 +57,7 @@ ___
     
     From the Azure command line Execute the command:
 
-    > packer build -var-file="az_secrets.json" demo.json
+    > packer build -var-file="az_secrets.json" server.json
 
     This will take a long time.
 
@@ -58,10 +65,9 @@ ___
 
     Navigate to Project1\terraform\production and then import the resource group ID you created earlier (in step 1). Use the resource group ID copied earlier.
     
-    > terraform import azurerm_resource_group.main /subscriptions/- - - -/resourceGroups/udacity-resources
-    
-6. Navigate to Project1\terraform\production
-    Edit the file vars.tf and enter the desired default Azure location. The location should be the same location as specified in Step 1 when creating the azure resource group, and the packer image (step 2). Save. 
+    > terraform import azurerm_resource_group.main /subscriptions/- - - -/resourceGroups/udacity-resources 
+
+    It will aski for the number of VMs to create. Enter any number as this will not affect the actual number of VMs created. 
     
 7. Validate the Terrorform deployment
 
