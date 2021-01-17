@@ -25,7 +25,7 @@ ___
 
     Navigate to Project1\terraform and open vars.tf using your text editor of choice (vi for example). Look for the variable "location" and default setting for location. Currently it is set to eastus2. The location should be the Azure location closed to where the created VMs will be utilized. Edit the file vars.tf and enter the desired default Azure location. The location should be the same location as specified in Step 1 when creating the azure resource group, and the packer image (step 2). Save. 
 
-    ![vars](./varsCapture.tf)
+    ![vars](./varsCapture.JPG)
 
     Terraform Variables: https://www.terraform.io/docs/configuration/variables.html
     
@@ -56,13 +56,17 @@ ___
     - client_secret
     - subscription_id
 
+    ![packer vars](./packerVars.JPG)
+
 4. Deploy Packer Image 
 
-    Naviage to Project1\packer.
+    Naviage to Project1
     
     From the Azure command line Execute the command:
 
     > packer build -var-file="az_secrets.json" server.json
+
+    ![packer build](./packerBuild.JPG)
 
     This will take a long time.
 
