@@ -33,7 +33,7 @@ ___
 
     Run terraform apply to create the resource group used for packer and terraform resources.
 
-    ![apply] (terraformApply.jpg)
+    ![apply] (./terraformApply.jpg)
 
     Answer yes when prompted.
 
