@@ -31,17 +31,20 @@ ___
 
     Navigate to Project1\terrform\create_rg\ nd open vars.tf using your text editor of choice (vi for example). Look for the variable "location" and default setting for location. Currently it is set to eastus2. The location should be the Azure location closed to where the created VMs will be utilized. Edit the file vars.tf and enter the desired default Azure location. The location should be the same location as specified in Step 1 when creating the azure resource group, and the packer image (step 2). Save. 
 
-    Run terraform apply to create the resource group used for packer and terraform resources.
+    Run terraform apply to create the resource group used for packer and terraform resources:
 
-    ![apply] (terraformApply.jpg)
+    ![apply](terraformApply.jpg, "terraform apply")
 
-    Answer yes when prompted.
+    Answer yes when prompted:
+
+    ![yes](./enterYes.JPG)
 
     **Important**
     Copy the Azure resource group ID after completion and save it for later use. It will look something like the below parameter. Substitute your subscription ID for where you see dashes (-) below:
 
     >[id=/subscriptions/- - - -/resourceGroups/udacity-resources]
 
+    ![resource](./resourceGroupID.JPG)
 
 3. Edit Packer variables to store Azure secrets unique to your Azure subscription 
     Open azure secrets file in Project1\packer\az_secrets.json
