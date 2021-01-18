@@ -11,7 +11,42 @@ resource "azurerm_network_security_group" "main" {
   name                = "${var.prefix}-SecurityGroup"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
+  
+  security_rule {
+    name                        = "allowLB-Inbound"
+    priority                    = 600
+    direction                   = "Inbound"
+    access                      = "Allow"
+    protocol                    = "*"
+    source_port_range           = "*"
+    destination_port_range      = "*"
+    source_address_prefix       = "AzureLoadBalancer"
+    destination_address_prefix  = "VNet"
+  }
 
+  security_rule {
+    name                        = "allowVNet-Inbound"
+    priority                    = 700
+    direction                   = "Inbound"
+    access                      = "Allow"
+    protocol                    = "*"
+    source_port_range           = "*"
+    destination_port_range      = "*"
+    source_address_prefix       = "VirtualNetwork"
+    destination_address_prefix  = "VirtualNetwork"
+  }
+
+  security_rule {
+    name                       = "DenyAllInbound2"
+    priority                   = 800
+    direction                  = "Inbound"
+    access                     = "Deny"
+    protocol                   = "*"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
 }
 
 resource "azurerm_public_ip" "main" {
@@ -73,6 +108,9 @@ resource "azurerm_network_interface" "main" {
     subnet_id                     = azurerm_subnet.internal.id
     private_ip_address_allocation = "Dynamic"
   }
+  tags = {
+    ProjectName = "Udacity DevOps Project1"
+  }
 }
 
 resource "azurerm_network_interface_backend_address_pool_association" "main" {
@@ -105,6 +143,9 @@ resource "azurerm_managed_disk" "managed_disk" {
   storage_account_type = "Standard_LRS"
   create_option        = "Empty"
   disk_size_gb         = 10
+  tags = {
+    ProjectName = "Udacity DevOps Project1"
+  }
 }
 
 resource "azurerm_virtual_machine_data_disk_attachment" "managed_disk_attach" {
@@ -133,5 +174,9 @@ resource "azurerm_linux_virtual_machine" "main" {
   os_disk {
     storage_account_type = "Standard_LRS"
     caching              = "ReadWrite"
+  }
+
+  tags = {
+    ProjectName = "Udacity DevOps Project1"
   }
 }
