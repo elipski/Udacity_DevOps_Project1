@@ -5,12 +5,20 @@ provider "azurerm" {
 resource "azurerm_resource_group" "main" {
   name     = "${var.prefix}-resources"
   location = var.location
+  
+  tags = {
+    ProjectName = "Udacity-Project1"
+  }
 }
 
 resource "azurerm_network_security_group" "main" {
   name                = "${var.prefix}-SecurityGroup"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
+
+  tags = {
+    ProjectName = "Udacity-Project1"
+  }
   
   security_rule {
     name                        = "allowLB-Inbound"
@@ -21,7 +29,7 @@ resource "azurerm_network_security_group" "main" {
     source_port_range           = "*"
     destination_port_range      = "*"
     source_address_prefix       = "AzureLoadBalancer"
-    destination_address_prefix  = "VNet"
+    destination_address_prefix  = "VirtualNetwork"
   }
 
   security_rule {
@@ -56,7 +64,7 @@ resource "azurerm_public_ip" "main" {
   allocation_method   = "Static"
 
   tags = {
-    environment = "Production"
+    ProjectName = "Udacity-Project1"
   }
 }
 
@@ -65,6 +73,10 @@ resource "azurerm_virtual_network" "main" {
   address_space       = ["10.0.2.0/24"]
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
+
+  tags = {
+    ProjectName = "Udacity-Project1"
+  }
 }
 
 resource "azurerm_subnet" "internal" {
@@ -83,6 +95,10 @@ resource "azurerm_lb" "main" {
   name                = "${var.prefix}-LoadBalancer"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
+
+  tags = {
+    ProjectName = "Udacity-Project1"
+  }
 
   frontend_ip_configuration {
     name                 = "${var.prefix}-PublicIPAddress"
@@ -109,7 +125,7 @@ resource "azurerm_network_interface" "main" {
     private_ip_address_allocation = "Dynamic"
   }
   tags = {
-    ProjectName = "Udacity DevOps Project1"
+    ProjectName = "Udacity-Project1"
   }
 }
 
@@ -133,6 +149,10 @@ resource "azurerm_availability_set" "avset" {
   platform_update_domain_count  = 2
   managed                       = true
 
+  tags = {
+    ProjectName = "Udacity-Project1"
+  }
+
 }
 
 resource "azurerm_managed_disk" "managed_disk" {
@@ -144,7 +164,7 @@ resource "azurerm_managed_disk" "managed_disk" {
   create_option        = "Empty"
   disk_size_gb         = 10
   tags = {
-    ProjectName = "Udacity DevOps Project1"
+    ProjectName = "Udacity-Project1"
   }
 }
 
@@ -177,6 +197,6 @@ resource "azurerm_linux_virtual_machine" "main" {
   }
 
   tags = {
-    ProjectName = "Udacity DevOps Project1"
+    ProjectName = "Udacity-Project1"
   }
 }
