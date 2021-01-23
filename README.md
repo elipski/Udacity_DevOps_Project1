@@ -84,7 +84,7 @@ ___
 
     ![terrform plan](./terraformPlan.JPG)
 
-    Varify there are no errors when complete.
+    Verify there are no errors when complete.
 
 8. Apply Terraform deployment  
 
@@ -93,4 +93,4 @@ ___
     ![Terraform Apply](./terraformApplySolution.JPG)
     
     Answer yes when prompted.
-    Varify there are no errors when complete.
+    Verify there are no errors when complete.
