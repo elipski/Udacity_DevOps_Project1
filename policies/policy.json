@@ -1,6 +1,6 @@
 {
  "properties": {
-  "displayName": "Require a tag and its value on resources",
+  "displayName": "tagging-policy",
   "policyType": "BuiltIn",
   "mode": "Indexed",
   "description": "Enforces a required tag and its value. Does not apply to resource groups.",
