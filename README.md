@@ -1,9 +1,11 @@
 ## DevOps Azure Infra structure Operations ##
 ### Infrastructure as Code Project 1 ###
+___
 
+### Introduction ###
 Deploy a Website with a load balancer using terraform, and packer templates, and the Azure CLI  
 
-#### Requirements ####
+#### Dependencies ####
 Minimum requirements for this project
 
 * Azure CLI (bash) 
@@ -25,7 +27,7 @@ ___
 
     Navigate to \Project1 and open vars.tf using your text editor of choice (vi for example). Look for the variable "location" and default setting for location. Currently it is set to eastus2. The location should be the Azure location closest to where the created VMs will be utilized by the end users. Edit the file vars.tf and enter the desired default Azure location. The location should be the same location throughout this deployment. Save. 
 
-    ![vars](./varsCapture.JPG)
+    ![vars](./images/varsCapture.JPG)
 
     Terraform Variables: https://www.terraform.io/docs/configuration/variables.html
     
@@ -35,7 +37,7 @@ ___
 
     Run terraform apply to create the resource group used for packer and terraform resources:
 
-    ![apply](./terraformApply.JPG)
+    ![apply](./images/terraformApply.JPG)
 
     Answer yes when prompted.
 
@@ -44,7 +46,7 @@ ___
 
     >[id=/subscriptions/- - - -/resourceGroups/udacity-resources]
 
-    ![resource](./resourceGroupID.JPG)
+    ![resource](./images/resourceGroupID.JPG)
 
 3. Edit Packer variables to store Azure secrets unique to your Azure subscription 
     
@@ -56,7 +58,7 @@ ___
 
     Packer authenticates with Azure using a service principal. After creating Azure service principle update the above variables in the az_secrets.json file with your service principles credentials. 
 
-    ![packer vars](./packerVars.JPG)
+    ![packer vars](./images/packerVars.JPG)
 
 4. Deploy Packer Image 
 
@@ -66,7 +68,7 @@ ___
 
     > packer build -var-file="az_secrets.json" server.json
 
-    ![packer build](./packerBuild.JPG)
+    ![packer build](./images/packerBuild.JPG)
 
     This will take a long time.
 
@@ -76,13 +78,13 @@ ___
     
     > terraform import azurerm_resource_group.main /subscriptions/- - - -/resourceGroups/udacity-resources
 
-    ![Terraform Import](./terraformImport.JPG)
+    ![Terraform Import](./images/terraformImport.JPG)
     
 7. Validate the Terrorform deployment
 
     from \Project1 run:
 
-    ![terrform plan](./terraformPlan.JPG)
+    ![terrform plan](./images/terraformPlan.JPG)
 
     Verify there are no errors when complete.
 
@@ -90,7 +92,7 @@ ___
 
     from \Project run:
 
-    ![Terraform Apply](./terraformApplySolution.JPG)
+    ![Terraform Apply](./images/terraformApplySolution.JPG)
     
     Answer yes when prompted.
     Verify there are no errors when complete.
